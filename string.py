@@ -29,8 +29,49 @@ prefix = 'Py'
 print(prefix + 'thon')
 # Python
 
-# リテラル連結が有効な例
+# プラス記号がないとリテラルが複数行に渡るときも読みやすい
 s = ('aaaaaaaaaaaaaaaa'
      'bbbbbbbbbbbbbbbb')
 print(s)
 # aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbb
+
+# バックスラッシュで連結することもできるが読みにくいので嫌う人もいる
+s = 'aaaaaaaaaaaaaaaa'\
+     'bbbbbbbbbbbbbbbb'
+print(s)
+# aaaaaaaaaaaaaaaabbbbbbbbbbbbbbbb
+
+# リテラルの一部を出力
+word = 'python'
+print(word[0])
+print(word[1])
+print(word[-1])
+# >>> print(word[0])
+# p
+# >>> print(word[1])
+# y
+# >>> print(word[-1])
+# n
+
+# スライス
+print(word[0:2])
+# >>> print(word[0:2])
+# py
+print(word[:2])
+# >>> print(word[:2])
+# py
+print(word[2:])
+# >>> print(word[2:])
+# thon
+
+# リテラルの一文字めを置き換える
+word = 'python'
+word = 'j' + word[1:]
+print(word)
+# jython
+
+# リテラルの長さ
+n = len(word)
+print(n)
+# >>> print(n)
+# 6
