@@ -53,3 +53,21 @@ def default_menu(entree='beef', drink='wine', dessert='ice'):
     print(dessert)
 
 default_menu(entree='chicken', drink='beer')
+
+# リスト型をデフォルト引数にするとバグにつながる
+def test_func(x, l=[]):
+    l.append(x)
+    return l
+# y = [1, 2, 3]
+# r = test_func(100, y)
+# print(r)
+# [1, 2, 3, 100]
+
+r = test_func(100)
+print(r)
+# [100]
+
+# デフォルト引数のリストが参照渡しなので次のようになる
+r = test_func(100)
+print(r)
+# [100, 100]
