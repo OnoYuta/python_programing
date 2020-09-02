@@ -71,3 +71,16 @@ print(r)
 r = test_func(100)
 print(r)
 # [100, 100]
+
+# リストのデフォルト値を設定したい場合はブロック内で初期化する
+def new_test_func(x, l=None):
+    if l is None:
+        l = []
+    l.append(x)
+    return l
+r = new_test_func(100)
+print(r)
+r = new_test_func(100)
+print(r)
+# [100]
+# [100]
